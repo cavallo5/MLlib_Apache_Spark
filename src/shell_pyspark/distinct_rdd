@@ -1,0 +1,10 @@
+insiemea=["a","b","c","d"]
+insiemeb=["c","d","e","f"]
+insiemec=["e","f","g","h"]
+a = sc.parallelize(insiemea)
+b = sc.parallelize(insiemeb)
+c = sc.parallelize(insiemec)
+unione_rdd = a.union(b).union(c)
+unione_rdd.collect()
+distinct_rdd = unione_rdd.distinct()
+distinct_rdd.collect()

@@ -1,0 +1,29 @@
+## Word Count (da documentazione Apache Spark)
+======================================================================================================================
+- Esecuzione in locale - Word Count
+======================================================================================================================
+
+/*
+Word Count: conta parole in un file di input e scrive risultato in file all'interno di una cartella output
+Si è usata la shell di Spark pyspark (versione Python)
+*/
+
+text_file = sc.textFile("/home/vincenzo/Desktop/input.txt")
+counts = text_file.flatMap(lambda line: line.split(" ")).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
+counts.saveAsTextFile("/home/vincenzo/Desktop/output")
+
+======================================================================================================================
+- Esecuzione su HPC - Word Count 
+======================================================================================================================
+
+/*
+Word Count: conta parole in un file di input e scrive risultato in file all'interno di una cartella output
+Si è usata la shell di Spark pyspark (versione Python)
+*/
+
+text_file = sc.textFile("file:////hpc/home/vincenzo.cavallo/myspark/spark-2.4.0-bin-hadoop2.7/test_mllib/word_count/input.txt")
+counts = text_file.flatMap(lambda line: line.split(" ")).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
+counts.saveAsTextFile("file:////hpc/home/vincenzo.cavallo/myspark/spark-2.4.0-bin-hadoop2.7/test_mllib/word_count/output")
+
+
+======================================================================================================================

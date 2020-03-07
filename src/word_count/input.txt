@@ -1,0 +1,1 @@
+Apache Spark è un progetto che diversamente ad Hadoop MapReduce non obbliga l’utilizzo del disco fisso, ma può effettuare operazioni direttamente in memoria centrale riuscendo ad offrire prestazioni anche 100 volte superiori su applicazioni specifiche. Spark offre un insieme di primitive più ampio rispetto a MapReduce, semplificando di molto la programmazione.

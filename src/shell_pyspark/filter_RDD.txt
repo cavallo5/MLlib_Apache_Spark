@@ -1,0 +1,7 @@
+print("Leggo testo.txt e lo salvo in un RDD")
+text_file = sc.textFile("file:////hpc/home/vincenzo.cavallo/myspark/spark-2.4.0-bin-hadoop2.7/test_mllib/shell_pyspark/data/testo.txt")
+print("Filtro le righe che contengono la parola spark")
+onlyspark = text_file.filter(lambda line : ("spark" in line.lower()))
+print("Usiamo count() per contare le linee che contengono quella parola e collect() per mostrarle")
+onlyspark.count()
+onlyspark.collect()

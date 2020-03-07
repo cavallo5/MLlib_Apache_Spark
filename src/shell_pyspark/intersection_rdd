@@ -1,0 +1,6 @@
+regioni=["abruzzo","basilicata","cammpania","emiliaromagna","friuli","lazio","liguria","lombardia","marche","molise","piemonte","puglia","sardegna","sicilia","toscana","trentino","umbria","valledaosta","veneto"]
+isole = ["sicilia","sardegna"]
+regioniRDD = sc.parallelize(regioni)
+isoleRDD = sc.parallelize(isole)
+intersezioneRDD = regioniRDD.intersection(isoleRDD)
+intersezioneRDD.collect()

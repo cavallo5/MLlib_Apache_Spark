@@ -1,0 +1,15 @@
+# Inizializzazione Spark in Python
+from pyspark import SparkConf, SparkContext
+conf = SparkConf().setMaster("local").setAppName("My App")
+sc = SparkContext(conf = conf)
+
+# Inizializzazione Spark in Scala
+import org.apache.spark.SparkConf
+import org.apache.spark.SparkContext
+import org.apache.spark.SparkContext._
+val conf = new SparkConf().setMaster("local").setAppName("My App") val sc = new SparkContext(conf)
+
+# Inizializzazione Spark in Java
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaSparkContext;
+SparkConf conf = new SparkConf().setMaster("local").setAppName("My App"); JavaSparkContext sc = new JavaSparkContext(conf);

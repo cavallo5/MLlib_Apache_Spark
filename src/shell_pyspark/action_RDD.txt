@@ -1,0 +1,13 @@
+#Azioni su RDD
+print("Leggo test.txt e lo salvo in un RDD")
+text_file = sc.textFile("file:////hpc/home/vincenzo.cavallo/myspark/spark-2.4.0-bin-hadoop2.7/test_mllib/shell_pyspark/data/test.txt")
+print("Il contenuto del RDD si vede usando l'azione collect()")
+text_file.collect()
+print("Con first() viene restituito la prima riga del RDD")
+text_file.first()
+print("Con take(n) leggo le prime n righe del RDD")
+text_file.take(5)
+print("con takeSample(False, n) vengono lette 10 righe casuali (senza sostituzione)")
+text_file.takeSample(False, 10)
+print("con count() conoscere il numero di linee in un RDD")
+text_file.count()

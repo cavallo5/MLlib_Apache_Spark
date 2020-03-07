@@ -1,0 +1,79 @@
+======================================================================================================================
+- Test in locale - examples/jars/spark-examples_2.11-2.4.0.jar
+======================================================================================================================
+
+# Run application locally on 8 cores
+./bin/spark-submit \
+  --class org.apache.spark.examples.SparkPi \
+  --master local[8] \
+  examples/jars/spark-examples*.jar \
+  100
+
+
+======================================================================================================================
+- Test in locale - examples/jars/scopt_2.11-3.7.0.jar
+======================================================================================================================
+
+# Run application locally on 8 cores
+./bin/spark-submit \
+  --class org.apache.spark.examples.SparkPi \
+  --master local[8] \
+  examples/jars/scopt*.jar \
+  100
+
+
+
+======================================================================================================================
+- Test in locale - examples/src//main/python/pi.py 
+======================================================================================================================
+./bin/spark-submit \
+  --class org.apache.spark.examples.SparkPi \
+  --master local[8] \
+  examples/src/main/python/pi.py \
+  10
+
+
+======================================================================================================================
+- Test in locale - examples/src//main/python/mllib/binary_classification_metrics_example.py
+======================================================================================================================
+./bin/spark-submit \
+  --class org.apache.spark.examples.SparkPi \
+  --master local[8] \
+  examples/src//main/python/mllib/binary_classification_metrics_example.py \
+  10
+
+
+======================================================================================================================
+- Test su HPC - examples/jars/spark-examples*.jar 
+======================================================================================================================
+
+./bin/spark-submit \
+    --class org.apache.spark.examples.SparkPi \
+    --master yarn \
+    --deploy-mode cluster \
+    --driver-memory 2g \
+    --executor-memory 1g \
+    --executor-cores 1 \
+    --queue thequeue \
+    examples/jars/spark-examples*.jar 3
+
+
+======================================================================================================================
+- Test su HPC -
+======================================================================================================================
+./bin/spark-submit examples/src/main/python/pi.py 3
+
+
+======================================================================================================================
+- Test su HPC - 
+======================================================================================================================
+
+./bin/spark-submit \
+  --class org.apache.spark.examples.SparkPi \
+  --master yarn \
+  --deploy-mode cluster \
+  --driver-memory 2g \
+  --executor-memory 1g \
+  --executor-cores 1 \
+  --queue thequeue \
+  examples/src/main/python/pi.py 3

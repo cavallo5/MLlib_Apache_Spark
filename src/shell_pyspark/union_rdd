@@ -1,0 +1,5 @@
+studentea = [("fisica",8),("matematica",7),("chimica",9)]
+studenteb = [("fisica",65),("maths",5),("chemistry",8)]
+a = sc.parallelize(studentea)
+b = sc.parallelize(studenteb)
+a.union(b).collect()

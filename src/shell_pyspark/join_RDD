@@ -1,0 +1,6 @@
+studentea=[("fisica",8),("matematica",7),("chimica",9)]
+studenteb=[("fisica",6),("matematica",5),("chimica",8)]
+a=sc.parallelize(studentea)
+b=sc.parallelize(studenteb)
+join_RDD = a.join(b)
+join_RDD.collect()
